@@ -1,0 +1,184 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chúc mừng 20/10 🌷</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ffd6e5, #fff4f8, #ffbfd5);
+      color: #98415f;
+      overflow-x: hidden;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 650px;
+      padding: 35px 24px;
+      background: rgba(255, 255, 255, 0.94);
+      border-radius: 28px;
+      border: 2px solid white;
+      box-shadow: 0 12px 35px #d45c8530;
+      position: relative;
+      z-index: 1;
+    }
+
+    .flower {
+      font-size: 58px;
+      animation: sway 2s infinite alternate;
+    }
+
+    @keyframes sway {
+      from { transform: rotate(-5deg); }
+      to { transform: rotate(5deg); }
+    }
+
+    h1 {
+      font-size: clamp(27px, 6vw, 42px);
+      color: #df477b;
+      line-height: 1.3;
+    }
+
+    .date {
+      font-size: 35px;
+      font-weight: bold;
+      color: #f05d91;
+    }
+
+    p {
+      font-size: 17px;
+      line-height: 1.9;
+    }
+
+    button {
+      margin-top: 16px;
+      padding: 14px 25px;
+      border: none;
+      border-radius: 30px;
+      background: #ed6392;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #d83e76;
+    }
+
+    #wish {
+      display: none;
+      margin-top: 24px;
+      padding: 18px;
+      background: #fff0f5;
+      border-radius: 20px;
+    }
+
+    .heart {
+      position: fixed;
+      bottom: -30px;
+      pointer-events: none;
+      animation: fly 6s linear forwards;
+      z-index: 0;
+    }
+
+    @keyframes fly {
+      to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    footer {
+      margin-top: 25px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="card">
+    <div class="flower">🌷💐🌷</div>
+
+    <h1>Chúc mừng ngày Phụ nữ Việt Nam</h1>
+
+    <div class="date">20/10 ❤️</div>
+
+    <h2>Gửi người phụ nữ tuyệt vời!</h2>
+
+    <p>
+      Nhân ngày 20/10, chúc bạn luôn xinh đẹp,
+      vui vẻ và hạnh phúc.
+      <br>
+      Chúc bạn luôn mạnh khỏe, thành công
+      và gặp thật nhiều điều may mắn.
+      <br>
+      Mong rằng mỗi ngày của bạn đều ngập tràn
+      tình yêu thương và tiếng cười. 💗
+    </p>
+
+    <button onclick="showWish()">
+      💌 Bấm để nhận lời chúc
+    </button>
+
+    <div id="wish">
+      <h2>🌹 Một lời chúc dành riêng cho bạn 🌹</h2>
+      <p>
+        Cảm ơn bạn vì đã làm cho thế giới này
+        trở nên tươi đẹp hơn.
+        <br>
+        Mong bạn luôn được yêu thương,
+        trân trọng và sống thật hạnh phúc.
+        <br>
+        <strong>Chúc bạn có ngày 20/10 thật tuyệt vời! 💖</strong>
+      </p>
+    </div>
+
+    <footer>Được tạo bằng tất cả sự yêu thương ❤️</footer>
+  </main>
+
+  <script>
+    function showWish() {
+      document.getElementById("wish").style.display = "block";
+      document.getElementById("wish").scrollIntoView({
+        behavior: "smooth",
+        block: "nearest"
+      });
+    }
+
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+
+      const icons = ["💗", "💕", "🌸", "🌷", "💖"];
+      heart.textContent =
+        icons[Math.floor(Math.random() * icons.length)];
+
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = (18 + Math.random() * 22) + "px";
+      heart.style.animationDuration = (4 + Math.random() * 4) + "s";
+
+      document.body.appendChild(heart);
+
+      setTimeout(function() {
+        heart.remove();
+      }, 8000);
+    }
+
+    setInterval(createHeart, 500);
+  </script>
+</body>
+</html>
